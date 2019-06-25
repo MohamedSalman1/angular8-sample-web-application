@@ -9,10 +9,10 @@ This Angular 8 application demonstrate following key features of Angular
 - Template driven forms
 - Reactive forms
 - Data sharing from/within
--- Unrelated Components: Sharing Data with a Service
--- Parent to Child: Sharing Data via Input()
--- Child to Parent: Sharing Data via Output() and EventEmitter
--- Child to Parent: Sharing Data via ViewChild()
+  * Unrelated Components: Sharing Data with a Service
+  * Parent to Child: Sharing Data via Input()
+  * Child to Parent: Sharing Data via Output() and EventEmitter
+  * Child to Parent: Sharing Data via ViewChild()
 
 ## Development server
 
