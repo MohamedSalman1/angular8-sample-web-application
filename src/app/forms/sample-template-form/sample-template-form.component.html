@@ -1,0 +1,29 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Template Driven Form</h1>
+    <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <form #login = "ngForm" (ngSubmit) = "onFormSubmit(login.value)" >
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <!-- <input class="form-control" id="email" type = "text" name = "username" placeholder = "Enter username!" ngModel> -->
+            <input required class="form-control" id="email" type = "text" name = "username" [(ngModel)]="username_info" placeholder = "Enter email address!" >
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input required class="form-control" id="pwd" type = "password" name = "pwd" placeholder = "Enter password!" ngModel>
+          </div>
+          <button type="submit" [disabled]="login.status != 'VALID'" value = "submit" class="btn btn-default">Submit</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</section>

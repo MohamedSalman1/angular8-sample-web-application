@@ -1,0 +1,35 @@
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+
+        <app-artist-info></app-artist-info>
+
+        <div *ngIf="albums">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let album of albums.results">
+
+              <div class="media rounds">
+                <div class="media-left" *ngIf="album.artworkUrl100">
+                  <a (click)="sendAlbumInfo(album)">
+                    <img class="media-object" [src]="album.artworkUrl100" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">
+                    <a (click)="sendAlbumInfo(album)">
+                      {{ album.collectionName }}
+                    </a>
+                  </h4>
+                  {{ album.artistName }}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

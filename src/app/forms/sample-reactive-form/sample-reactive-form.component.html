@@ -1,0 +1,65 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Reactive Form</h1>
+    <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <form [formGroup]="angForm" (submit) = "onReactiveFormSubmit(angForm.value, username.value, password.value)">
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <!-- <input class="form-control" id="email" type = "text" name = "username" placeholder = "Enter username!" ngModel> -->
+            <!-- <input required class="form-control" id="email" type = "text" name = "username" [(ngModel)]="username_info" placeholder = "Enter email address!" > -->
+            <input type = "text" 
+            class="form-control"
+            name = "username" 
+            placeholder = "Name" 
+            formControlName="username" 
+            #username>
+          </div>
+
+          <div class="form-group invalid-feedback" *ngIf="angFormData.username.errors && (angFormData.username.dirty || angFormData.username.touched)">
+            <div *ngIf="angFormData.username.errors.required">Username is required</div>
+            <div *ngIf="angFormData.username.errors.minlength || angFormData.username.errors.maxlength">Username must be at least 2 and max 30 characters</div>
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <!-- <input required class="form-control" id="pwd" type = "password" name = "pwd" placeholder = "Enter password!" ngModel> -->
+            <input type = "password" 
+            class="form-control"
+            name = "pwd" 
+            placeholder = "Password" 
+            formControlName="password" 
+            #password>
+
+          </div>
+          
+          <div class="form-group invalid-feedback" *ngIf="angFormData.password.errors && (angFormData.password.dirty || angFormData.password.touched)">
+            <div *ngIf="angFormData.password.errors.required">Password is required</div>
+            <div *ngIf="angFormData.password.errors.minlength || angFormData.password.errors.maxlength">Password must be at least 6 and max 15 characters</div>
+          </div>
+
+          <div class="form-group" style="padding-left: 20px;">
+            <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && angFormData.acceptTerms.errors }" />
+            <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+          </div>
+
+          <div *ngIf="angFormData.acceptTerms.errors && (angFormData.acceptTerms.dirty || angFormData.acceptTerms.touched)" class="form-group invalid-feedback">
+            Accept Ts & Cs is required
+          </div>
+
+          <div class="clearfix"></div>
+
+          <button type="submit" [disabled]="angForm.status != 'VALID'" value = "submit" class="btn btn-default">Submit</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</section>
