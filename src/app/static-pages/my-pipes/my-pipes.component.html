@@ -1,0 +1,27 @@
+<header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Angular Pipes</h1>
+      <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+    </div>
+  </header>
+  
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+
+          <h3>Date Pipe</h3>
+  
+          <p>The hero's birthday is {{ birthday | date:format }}</p>
+
+          <button (click)="toggleFormat()" class="btn">Toggle Format</button> <hr />
+
+          <h3>Custom Pipe</h3>
+
+          <p>The exponential form of 2 is {{ 2 | exponential:10 }}</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>

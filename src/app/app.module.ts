@@ -17,6 +17,10 @@ import { AlbumListingComponent } from './artists/album-listing/album-listing.com
 import { ArtistInfoComponent } from './artists/artist-info/artist-info.component';
 import { SampleReactiveFormComponent } from './forms/sample-reactive-form/sample-reactive-form.component';
 import { SampleTemplateFormComponent } from './forms/sample-template-form/sample-template-form.component';
+import { MyPipesComponent } from './static-pages/my-pipes/my-pipes.component';
+import { ExponentialPipe } from './pipes/exponential.pipe';
+import { MyDirectivesComponent } from './static-pages/my-directives/my-directives.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { SampleTemplateFormComponent } from './forms/sample-template-form/sample
     AlbumListingComponent,
     ArtistInfoComponent,
     SampleReactiveFormComponent,
-    SampleTemplateFormComponent
+    SampleTemplateFormComponent,
+    MyPipesComponent,
+    ExponentialPipe,
+    MyDirectivesComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,4 @@
 .invalid-feedback { display: inline-block; }
+#about {
+    min-height: 350px;
+}

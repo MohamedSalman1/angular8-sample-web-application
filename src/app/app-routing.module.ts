@@ -7,6 +7,8 @@ import { AlbumsComponent } from  './artists/albums/albums.component';
 import { SongInfoComponent } from  './artists/song-info/song-info.component';
 import { SampleReactiveFormComponent } from  './forms/sample-reactive-form/sample-reactive-form.component';
 import { SampleTemplateFormComponent } from  './forms/sample-template-form/sample-template-form.component';
+import { MyPipesComponent } from  './static-pages/my-pipes/my-pipes.component';
+import { MyDirectivesComponent } from  './static-pages/my-directives/my-directives.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,22 @@ const routes: Routes = [
       {
         path:  'template-driven-form',
         component: SampleTemplateFormComponent
+      },
+      {
+        path:  'pipes',
+        component: MyPipesComponent
+      },
+      {
+        path:  'directives',
+        component: MyDirectivesComponent
+      },
+      {
+        path: 'customers',
+        loadChildren: () => import('./customers/customers.module').then(mod => mod.CustomersModule)
+      },
+      {
+        path: 'orders',
+        loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule)
       }
     ]
   }

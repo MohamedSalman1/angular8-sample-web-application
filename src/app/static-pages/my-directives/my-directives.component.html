@@ -1,0 +1,28 @@
+<header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Angular Directives</h1>
+      <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+    </div>
+  </header>
+  
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+          <p appHighlight defaultColor="purple">Highlight me by hovering!</p>
+
+          <p [appHighlight]="color">Highlight me!</p>
+
+          <h4>Pick a highlight color</h4>
+          <div>
+            <input type="radio" name="colors" (click)="color='lightgreen'">Green
+            <input type="radio" name="colors" (click)="color='yellow'">Yellow
+            <input type="radio" name="colors" (click)="color='cyan'">Cyan
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
